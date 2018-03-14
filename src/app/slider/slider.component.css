@@ -1,0 +1,83 @@
+.slideItem{
+    height: 200px;
+    overflow: hidden;
+}
+
+.arrowed {
+    position: relative;
+    height: 30px; width: 30px;
+    margin: 0 20px 20px 0;
+}
+
+/* Just centering the examples */
+.arrowed div {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+}
+.arrow-left{
+    height: 10px; width: 10px;
+    border: 2px solid grey;
+    border-width: 0 0 2px 2px;
+    transform: rotate(45deg);
+}
+.arrow-right{
+    height: 10px; width: 10px;
+    border: 2px solid grey;
+    border-width: 2px 2px 0 0;
+    transform: rotate(45deg);
+}
+.leftRs{
+    left: 5px;
+    position: absolute;
+    margin: auto;
+    top: -15px;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    border-bottom-width: 0;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.55);
+}
+.rightRs{
+    right: 5px;
+    position: absolute;
+    margin: auto;
+    top: -15px;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    border-bottom-width: 0;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.55);
+
+}
+
+
+.ngxcarouselPointDefault .ngxcarouselPoint {
+    list-style-type: none;
+    text-align: center;
+    padding: 12px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    left: 0;
+    box-sizing: border-box;
+}
+.ngxcarouselPointDefault.ngxcarouselPoint li {
+    display: inline-block;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.55);
+    padding: 5px;
+    margin: 0 3px;
+    transition: .4s ease all;
+}
+.ngxcarouselPointDefault.ngxcarouselPoint li.active {
+    background: white;
+    width: 10px;
+}
