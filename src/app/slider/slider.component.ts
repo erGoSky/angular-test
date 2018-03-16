@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxCarousel } from 'ngx-carousel';
 
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
+interface Slide {
+  title: string;
+  url: string;
+}
+
+
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -8,11 +18,19 @@ import { NgxCarousel } from 'ngx-carousel';
 })
 export class SliderComponent implements OnInit {
 
-  constructor() { }
+  slideCol: AngularFirestoreCollection<Slide>;
+  slides: Observable<Slide[]>;
+
+  constructor(private afs: AngularFirestore) { }
 
   public carouselOne: NgxCarousel;
 
   ngOnInit() {
+    this.slideCol = this.afs.collection('slides');
+    let test = this.afs.collection('slides').doc('JlC3OlkN2JO7RZQ9UzHU');
+    this.slides = this.slideCol.valueChanges();
+    console.log(this.slides,this.slideCol,test);
+
     this.carouselOne = {
       grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
       slide: 1,
