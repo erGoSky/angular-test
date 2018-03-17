@@ -11,5 +11,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
   }
+  events = [];
 
+  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
 }

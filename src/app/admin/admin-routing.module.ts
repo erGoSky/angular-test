@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {AdminComponent} from "./admin.component";
 import {AdminGuard} from "./admin.guard";
 
+
 const routes: Routes = [{path:"admin", component:AdminComponent, canActivate: [AdminGuard] }];
 
 @NgModule({

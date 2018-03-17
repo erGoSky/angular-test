@@ -33,7 +33,6 @@ import {AngularFirestoreModule} from "angularfire2/firestore";
     RouterModule,
     AppRoutingModule,
 
-
     PortfolioModule,
     AdminModule,
   ],
